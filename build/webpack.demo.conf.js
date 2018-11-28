@@ -13,7 +13,7 @@ module.exports = {
     publicPath: "/"
   },
   resolve: {
-    extensions: [".js", ".json", "vue"]
+    extensions: [".js", ".json", ".vue"]
   },
 
   module: {
@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, "../examples/index.html"),
+      filename: path.resolve(__dirname, "../examples/dist/index.html"),
       title: "example"
     }),
     new VueLoaderPlugin(),
