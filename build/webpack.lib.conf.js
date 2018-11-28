@@ -9,8 +9,8 @@ module.exports = {
     app: path.resolve(__dirname, "../src/index.js")
   },
   output: {
-    path: path.resolve(__dirname, "lib"),
-    filename: "lib/[name].js",
+    path: path.resolve(__dirname, "../lib"),
+    filename: "[name].js",
     library: "ds-ui",
     //打包方式为umd
     libraryTarget: "umd"
