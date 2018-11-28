@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:demo": "webpack --config build/webpack.demo.prod.conf.js",
-    "demo": "webpack-dev-server --open --config build/webpack.demo.conf.js",
+    "demo:build": "webpack --config build/webpack.demo.prod.conf.js",
+    "demo:dev": "webpack-dev-server --open --config build/webpack.demo.dev.conf.js",
     "lib": "webpack --config build/webpack.lib.conf.js"
   },
   "author": "",

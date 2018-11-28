@@ -1,11 +1,12 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 //vue-loader15需要插件
 const { VueLoaderPlugin } = require("vue-loader");
 const webpack = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "none",
   entry: { app: path.resolve(__dirname, "../examples/main.js") },
   output: {
     filename: "[name].[hash].js",
@@ -15,7 +16,6 @@ module.exports = {
   resolve: {
     extensions: [".js", ".json", ".vue"]
   },
-
   module: {
     rules: [
       {
@@ -37,20 +37,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, "../examples/dist/index.html"),
-      title: "example"
-    }),
-    new VueLoaderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("devlopment")
-    })
-  ],
-  devtool: "eval-source-map",
-  devServer: {
-    contentBase: path.resolve(__dirname, "../examples/dist"),
-    hot: true
-  }
+  plugins: [new VueLoaderPlugin()]
 };
