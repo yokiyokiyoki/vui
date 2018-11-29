@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ds-button">
     <button @click="handleClick">我是{{msg}}按钮</button>
     <span>{{msg+ds}}</span>
   </div>

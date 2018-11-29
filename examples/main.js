@@ -6,7 +6,8 @@ Vue.use(VueRouter);
 
 import router from "./router/index.js";
 
-import dsui from "../lib/app";
+import dsui from "../lib/dsui";
+import "../lib/styles/dsui.css";
 
 Vue.use(dsui);
 

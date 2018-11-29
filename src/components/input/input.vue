@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ds-input">
     <input type="text" v-model="msg">
   </div>
 </template>
