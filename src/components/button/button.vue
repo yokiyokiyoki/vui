@@ -3,6 +3,6 @@
 </template>
 <script>
 export default {
-  name: "Button"
+  name: "ds-button"
 };
 </script>

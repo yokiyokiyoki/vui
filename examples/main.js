@@ -6,6 +6,9 @@ Vue.use(VueRouter);
 
 import router from "./router/index.js";
 
+import dsui from "../lib/app";
+Vue.use(dsui);
+
 new Vue({
   router,
   render: h => h(App)

@@ -1,5 +1,7 @@
 <template>
-  <div class="button">11</div>
+  <div class="button">
+    <ds-button></ds-button>
+  </div>
 </template>
 <script>
 export default {};
