@@ -41,7 +41,17 @@ const config = webpackMerge(common, {
             options: {
               raw: true,
               // 阻止提取脚本和样式标签
-              preventExtract: true
+              preventExtract: true,
+              preprocess: (MarkdownIt, source) => {
+                // table标签
+                MarkdownIt.renderer.rules.table_open = function() {
+                  return '<table class="doc-table">';
+                };
+                MarkdownIt.renderer.rules.fence = wrap(
+                  MarkdownIt.renderer.rules.fence
+                );
+                return source;
+              }
             }
           }
         ]
@@ -49,5 +59,15 @@ const config = webpackMerge(common, {
     ]
   }
 });
+
+//所有标签加上hightlight的class
+function wrap(render) {
+  return function() {
+    return render
+      .apply(this, arguments)
+      .replace('<code v-pre class="', '<code class="hljs ')
+      .replace("<code>", '<code class="hljs">');
+  };
+}
 
 module.exports = config;

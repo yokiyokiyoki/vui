@@ -2,7 +2,7 @@
 
 ### 基本用法
 
-```tpl
+```html
 <template>
   <div class="button"><p>{{ msg }}</p></div>
 </template>

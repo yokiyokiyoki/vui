@@ -1,15 +1,31 @@
 <template>
   <div class="container">
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/button">Button</router-link>
-        </li>
-      </ul>
-    </nav>
-    <router-view></router-view>
+    <div class="main-content">
+      <div class="page-container clearfix">
+        <div class="page-content">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-export default {};
+import "highlight.js/styles/atom-one-dark.css";
+export default {
+  name: "App"
+};
 </script>
+<style>
+.doc-table {
+  table-layout: fixed;
+  width: inherit;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  color: #515a6e;
+  font-size: 12px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #515a6e;
+}
+</style>
