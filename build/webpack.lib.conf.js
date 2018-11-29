@@ -2,11 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 //vue-loader15需要插件
 const { VueLoaderPlugin } = require("vue-loader");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
   entry: {
-    app: path.resolve(__dirname, "../src/index.js")
+    dsui: path.resolve(__dirname, "../src/index.js")
   },
   output: {
     path: path.resolve(__dirname, "../lib"),
@@ -27,10 +28,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
-      {
         test: /\.(png|gif|svg|jpg)$/,
         use: ["file-loader"]
       },
@@ -45,5 +42,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [new VueLoaderPlugin()]
+  plugins: [
+    new VueLoaderPlugin(),
+    new CleanWebpackPlugin([path.resolve(__dirname, "../lib/dsui.js")], {
+      root: path.resolve(__dirname, "..")
+    })
+  ]
 };
