@@ -14,7 +14,10 @@ module.exports = {
     publicPath: "/"
   },
   resolve: {
-    extensions: [".js", ".json", ".vue"]
+    extensions: [".js", ".json", ".vue"],
+    alias:{
+      "lib@":path.resolve(__dirname,"../src")
+    }
   },
   module: {
     rules: [

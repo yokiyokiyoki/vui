@@ -22,7 +22,7 @@
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     },
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
+      "^lib@/(.*)$": "<rootDir>/src/$1"
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
