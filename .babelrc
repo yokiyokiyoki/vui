@@ -1,4 +1,9 @@
 {
   "presets": ["@babel/preset-env"],
-  "plugins": ["syntax-dynamic-import"]
+  "plugins": ["syntax-dynamic-import"],
+  "env": {
+    "test": {
+      "presets": [["env", { "targets": { "node": "current" } }]]
+    }
+  }
 }
