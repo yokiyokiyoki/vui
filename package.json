@@ -9,13 +9,15 @@
     "lib": "yarn lib:style&&yarn lib:js",
     "doc:serve": "webpack-dev-server --open --config build/webpack.doc.dev.conf.js",
     "lib:style": "gulp --gulpfile build/build-style.js",
-    "lib:js": "webpack --config build/webpack.lib.conf.js"
+    "lib:js": "webpack --config build/webpack.lib.conf.js",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@vue/test-utils": "^1.0.0-beta.26",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "css-loader": "^1.0.1",
@@ -27,6 +29,7 @@
     "gulp-rename": "^1.4.0",
     "highlight.js": "^9.13.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "style-loader": "^0.23.1",
