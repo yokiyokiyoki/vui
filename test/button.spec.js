@@ -7,6 +7,6 @@ describe("Button", () => {
     const wrapper = shallowMount(Message, {
       propsData: { msg }
     });
-    expect(wrapper.text()).toBe(msg);
+    expect(wrapper.find(".msg").text()).toBe(msg);
   });
 });
