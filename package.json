@@ -24,9 +24,11 @@
     "moduleNameMapper": {
       "^lib@/(.*)$": "<rootDir>/src/$1"
     },
+    "coverageDirectory": "<rootDir>/test/coverage",
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,vue}",
+      "src/componets/*.{js,vue}",
+      "src/directives/*.js",
       "!**/node_modules/**"
     ],
     "coverageReporters": [
