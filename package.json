@@ -18,7 +18,8 @@
       "vue"
     ],
     "transform": {
-      ".*\\.(vue)$": "vue-jest"
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     },
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
@@ -30,6 +31,7 @@
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
     "@vue/test-utils": "^1.0.0-beta.26",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "css-loader": "^1.0.1",
