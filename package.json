@@ -14,7 +14,11 @@
     "precommit-msg": "echo 'formatting code...'"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "json", "vue"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "transform": {
       ".*\\.(vue)$": "vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
@@ -24,9 +28,18 @@
     },
     "coverageDirectory": "<rootDir>/test/coverage",
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/componets/*.{js,vue}", "src/directives/*.js", "!**/node_modules/**"],
-    "coverageReporters": ["html", "text-summary"],
-    "snapshotSerializers": ["jest-serializer-vue"]
+    "collectCoverageFrom": [
+      "src/componets/*.{js,vue}",
+      "src/directives/*.js",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -35,6 +48,7 @@
     "@babel/preset-env": "^7.1.6",
     "@vue/test-utils": "^1.0.0-beta.26",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -81,10 +95,19 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{less,css,js}": ["yarn prettier --write", "git add"],
-      "*.js": ["yarn eslint --fix", "git add"]
+      "*.{less,css,js}": [
+        "yarn prettier --write",
+        "git add"
+      ],
+      "*.js": [
+        "yarn eslint --fix",
+        "git add"
+      ]
     },
-    "ignore": ["lib/**/*.js", "lib/**/*.css"]
+    "ignore": [
+      "lib/**/*.js",
+      "lib/**/*.css"
+    ]
   },
   "husky": {
     "hooks": {
