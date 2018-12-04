@@ -11,7 +11,8 @@
     "lib:style": "gulp --gulpfile build/build-style.js",
     "lib:js": "webpack --config build/webpack.lib.conf.js",
     "eslint-fix": "eslint src/**/*.js build/**/*.js --fix",
-    "precommit-msg": "echo 'formatting code...'"
+    "precommit-msg": "echo 'formatting code...'",
+    "release": "standard-version"
   },
   "jest": {
     "moduleFileExtensions": ["js", "json", "vue"],
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.1.6",
+    "@commitlint/cli": "^7.2.1",
     "@vue/test-utils": "^1.0.0-beta.26",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
@@ -41,6 +43,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^1.0.0",
     "commitizen": "^3.0.5",
+    "commitlint-config-cz": "^0.10.1",
     "css-loader": "^1.0.1",
     "cz-customizable": "^5.3.0",
     "eslint": "^5.9.0",
@@ -67,6 +70,7 @@
     "less-loader": "^4.1.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
+    "standard-version": "^4.4.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "vue-jest": "^3.0.1",
@@ -91,7 +95,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn precommit-msg && lint-staged"
+      "pre-commit": "yarn precommit-msg && lint-staged",
+      "commit-msg": "commitlint -c -e $GIT_PARAMS"
     }
   },
   "config": {
