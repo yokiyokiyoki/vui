@@ -1,6 +1,4 @@
-# 手动搭建 UI 框架
-
-> 基于 webpack4，参考了比如 element-ui、vux、 vant 等，对其源码进行拜读
+# UI
 
 ### 文档
 
