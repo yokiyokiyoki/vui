@@ -9,7 +9,9 @@
     "lib": "yarn lib:style&&yarn lib:js",
     "doc:serve": "webpack-dev-server --open --config build/webpack.doc.dev.conf.js",
     "lib:style": "gulp --gulpfile build/build-style.js",
-    "lib:js": "webpack --config build/webpack.lib.conf.js"
+    "lib:js": "webpack --config build/webpack.lib.conf.js",
+    "eslint-fix": "eslint src/**/*.js build/**/*.js --fix",
+    "precommit-msg": "echo 'formatting code...'"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -51,6 +53,7 @@
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
+    "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-loader": "^2.1.1",
@@ -67,10 +70,12 @@
     "gulp-rename": "^1.4.0",
     "highlight.js": "^9.13.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.2.0",
     "jest": "^23.6.0",
     "jest-serializer-vue": "^2.0.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
@@ -86,5 +91,26 @@
   "dependencies": {
     "vue": "^2.5.17",
     "vue-router": "^3.0.2"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{less,css,js}": [
+        "yarn prettier --write",
+        "git add"
+      ],
+      "*.js": [
+        "yarn eslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "lib/**/*.js",
+      "lib/**/*.css"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit-msg && lint-staged"
+    }
   }
 }
