@@ -4,7 +4,7 @@
 
 > 对于一个 UI 框架来说，编写文档是必不可少的
 
-- yarn demo
+- yarn doc
 - 使用 vue-markdown-loader 来愉快的编写 markdown 文档
 - highlight 高亮代码
 
