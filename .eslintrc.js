@@ -4,14 +4,15 @@ module.exports = {
   env: {
     //指定环境，才能使用全局变量，不然浏览器Image会报错
     browser: true,
-    node: true
+    node: true,
+    jest: true
   },
-  extends: ["standard", "prettier"],
+  extends: ['standard', 'prettier'],
   //兼容新特性
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   rules: {
-    "prettier/prettier": "error"
+    'prettier/prettier': 'error'
     //覆写规则
   },
-  plugins: ["prettier"]
+  plugins: ['prettier']
 };
