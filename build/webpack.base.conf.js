@@ -15,8 +15,8 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".json", ".vue"],
-    alias:{
-      "lib@":path.resolve(__dirname,"../src")
+    alias: {
+      "lib@": path.resolve(__dirname, "../src")
     }
   },
   module: {
@@ -38,6 +38,19 @@ module.exports = {
       {
         test: /\.vue$/,
         use: ["vue-loader"]
+      },
+      {
+        test: /\.js$/,
+        include: [path.resolve(__dirname, "../src")],
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "eslint-loader",
+            options: {
+              fix: true
+            }
+          }
+        ]
       }
     ]
   },
