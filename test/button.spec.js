@@ -3,7 +3,7 @@ import Message from "lib@/components/button/button.vue";
 
 describe("Button", () => {
   it("renders props.msg when passed", () => {
-    const msg = "new message";
+    const msg = "随便写的";
     const wrapper = shallowMount(Message, {
       propsData: { msg }
     });
