@@ -8,6 +8,7 @@
     "demo": "webpack-dev-server --open --config build/webpack.demo.conf.js",
     "lib": "yarn lib:style&&yarn lib:js",
     "doc:serve": "webpack-dev-server --open --config build/webpack.doc.dev.conf.js",
+    "doc:build": "webpack --config build/webpack.doc.prod.conf.js",
     "lib:style": "gulp --gulpfile build/build-style.js",
     "lib:js": "webpack --config build/webpack.lib.conf.js",
     "eslint-fix": "eslint src/**/*.js build/**/*.js --fix",
@@ -91,7 +92,7 @@
       "*.{less,css,js}": ["yarn prettier --write", "git add"],
       "*.js": ["yarn eslint --fix", "git add"]
     },
-    "ignore": ["lib/**/*.js", "lib/**/*.css"]
+    "ignore": ["lib/**/*.js", "lib/**/*.css", "doc/**/*.css", "doc/**/*.js", "examples/**/*.css", "examples/**/*.js"]
   },
   "husky": {
     "hooks": {
