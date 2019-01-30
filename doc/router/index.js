@@ -1,10 +1,14 @@
-import VueRouter from "vue-router";
+import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   routes: [
     {
-      path: "/button",
-      component: () => import("../components/Button.md")
+      path: '/',
+      redirect: 'button'
+    },
+    {
+      path: '/button',
+      component: () => import('../components/Button.md')
     }
   ]
 });
