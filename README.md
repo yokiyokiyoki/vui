@@ -13,7 +13,12 @@
 
 ### 组件
 
+- 添加组件时候必须注册name，如'ds-button'
 - 打包 yarn lib
+
+### 提交
+- 先git add . 然后git cz
+- 或者直接yarn commit
 
 ##### 特性
 

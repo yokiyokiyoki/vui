@@ -5,6 +5,9 @@
         <li>
           <router-link to="/button">Button</router-link>
         </li>
+        <li>
+          <router-link to="/collapse">collapse</router-link>
+        </li>
       </ul>
     </nav>
     <router-view></router-view>

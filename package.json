@@ -14,7 +14,8 @@
     "lib:js": "webpack --config build/webpack.lib.conf.js",
     "eslint-fix": "eslint src/**/*.js build/**/*.js --fix",
     "precommit-msg": "echo 'formatting code...'",
-    "release": "standard-version"
+    "release": "standard-version",
+    "commit": "git add . && git cz"
   },
   "jest": {
     "moduleFileExtensions": ["js", "json", "vue"],
