@@ -1,40 +1,39 @@
-const webpackMerge = require("webpack-merge");
-const path = require("path");
-const common = require("./webpack.demo.base.conf");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpackMerge = require('webpack-merge');
+const path = require('path');
+const common = require('./webpack.demo.base.conf');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = webpackMerge(common, {
-  mode: "production",
+  mode: 'production',
   output: {
-    filename: "[name].[chunkHash].js",
-    path: path.resolve(__dirname, "../examples/dist"),
-    publicPath: "/"
+    filename: '[name].[chunkHash].js',
+    path: path.resolve(__dirname, '../examples/dist'),
+    publicPath: '/'
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   plugins: [
-    new CleanWebpackPlugin(["dist"], {
-      root: path.resolve(__dirname, "../examples")
+    new CleanWebpackPlugin(['dist'], {
+      root: path.resolve(__dirname, '../examples')
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("production")
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: path.resolve(__dirname, "../examples/index.html")
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../examples/index.html')
     })
   ],
   optimization: {
-    runtimeChunk: "single",
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
+          name: 'vendors',
+          chunks: 'all'
         }
       }
     }

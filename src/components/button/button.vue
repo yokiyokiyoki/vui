@@ -1,13 +1,13 @@
 <template>
   <div class="ds-button">
-    <button>我是{{msg}}按钮</button>
+    <button>我是{{msg}}按钮12</button>
     <span>{{msg+ds}}</span>
     <span class="msg">{{msg}}</span>
   </div>
 </template>
 <script>
 export default {
-  name: "ds-button",
+  name: 'ds-button',
   // data() {
   //   return {
   //     ds: "ds-ui"

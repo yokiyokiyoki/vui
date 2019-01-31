@@ -5,8 +5,10 @@ import App from './App';
 
 import router from './router/index.js';
 
-import dsui from '../lib/dsui';
-import '../lib/styles/dsui.css';
+// import dsui from '../lib/dsui';
+// import '../lib/styles/dsui.css';
+// 开发模式直接不引用打包
+import dsui from '../src/index';
 Vue.use(VueRouter);
 
 Vue.use(dsui);

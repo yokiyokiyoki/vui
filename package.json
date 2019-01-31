@@ -6,7 +6,7 @@
   "typings": "typings/index.d.ts",
   "scripts": {
     "test": "jest",
-    "demo": "webpack-dev-server --open --config build/webpack.demo.conf.js",
+    "demo": "webpack-dev-server --open --config build/webpack.demo.dev.conf.js",
     "lib": "yarn lib:style&&yarn lib:js",
     "doc:serve": "webpack-dev-server --open --config build/webpack.doc.dev.conf.js",
     "doc:build": "webpack --config build/webpack.doc.prod.conf.js",
