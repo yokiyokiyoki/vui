@@ -5,10 +5,10 @@
 </template>
 <script>
 export default {
-  name: "ds-input",
+  name: 'ds-input',
   data() {
     return {
-      msg: "ds-ui"
+      msg: 'ds-ui'
     };
   }
 };
