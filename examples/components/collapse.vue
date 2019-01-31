@@ -1,6 +1,6 @@
 <template>
-  <div class="button">
-    <ds-button></ds-button>
+  <div class="collapse">
+    <ds-collapse></ds-collapse>
   </div>
 </template>
 <script>
