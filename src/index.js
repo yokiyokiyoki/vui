@@ -1,8 +1,10 @@
 import Button from './components/button';
 import Input from './components/input';
 import Collapse from './components/collapse';
+import Card from './components/card';
+import Icon from './components/icon';
 
-const components = [Button, Input, Collapse];
+const components = [Button, Input, Collapse, Card, Icon];
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -20,5 +22,7 @@ export default {
   install,
   Button,
   Input,
-  Collapse
+  Collapse,
+  Card,
+  Icon
 };
