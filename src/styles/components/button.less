@@ -1,7 +1,233 @@
 @import '../custom';
 @btn-prefix-cls: ~'@{css-prefix}btn';
+@btn-prefix-cls-ghots: ~'@{css-prefix}btn-ghost';
+//也许是共用样式
+@text-color : #515a6e;
+@primary-color: #2d8cf0;
+@info-color: #2db7f5;
+@success-color: #19be6b;
+@warning-color: #f90;
+@error-color: #ed4014;
+@line-height: 1.5;
+.btn-size(@padding,@font-size,@border-radius) {
+  padding: @padding;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+.btn-type-color(@color,@bg,@border-color) {
+  color: @color;
+  background: @bg;
+  border-color: @border-color;
+}
+/*
+* Less tint颜色混合函数
+* 接受两个参数 color, value(百分比或者小数)
+* 以设定的比例value将传入的颜色color与白色混合
+* 同 Less颜色混合函数mix(#fff,@colr,@value)  
+* example1: tint(#0000ff,50%) = mix(#ff0000,#0000ff,50%) = #800080 
+* 
+*/
+.btn-color-variant(@color,@bg,@border-color) {
+  .btn-type-color(@color, @bg, @border-color);
+  &:hover {
+    .btn-type-color(tint(@color, 20%), tint(@bg, 20%), tint(@border-color, 20%));
+  }
+  &:active {
+    .btn-type-color(tint(@color, 5%), tint(@bg, 5%), tint(@border-color, 5%));
+  }
+}
+//default样式
+.btn-default() {
+  .btn-type-color(@btn-default-color, @btn-default-bg, @btn-default-border);
+  &:hover {
+    .btn-type-color(tint(@primary-color, 20%), tint(@btn-default-bg, 20%), tint(@primary-color, 20%));
+  }
+  &:active {
+    .btn-type-color(tint(@primary-color, 5%), tint(@btn-default-bg, 5%), tint(@primary-color, 5%));
+  }
+}
+//定义button的一些样式，
+@btn-padding-base: 5px 15px;
+@btn-padding-large: 6px 15px;
+@btn-padding-small: 1px 7px;
+@btn-font-size-base: 12px;
+@btn-font-size-large: 14px;
+@btn-border-raduis: 4px;
+@btn-border-raduis-small: 3px;
+@btn-disable-border: #dcdee2;
+//default style
+@btn-default-color: @text-color;
+@btn-default-bg: #fff;
+@btn-default-border: #dcdee2;
+
+//primary style
+@btn-primary-color: #fff;
+@btn-primary-bg: @primary-color;
+@btn-primary-border: @primary-color;
+
+//text style
+@btn-text-color: @text-color;
+@btn-text-bg: transparent;
+@btn-text-border: transparent;
+
+//info style
+@btn-info-color: #fff;
+@btn-info-bg: @info-color;
+@btn-info-border: @info-color;
+
+//success style
+@btn-success-color: #fff;
+@btn-success-bg: @success-color;
+@btn-success-border: @success-color;
+
+//warning style
+@btn-warning-color: #fff;
+@btn-warning-bg: @warning-color;
+@btn-warning-border: @warning-color;
+
+//error style
+@btn-error-color: #fff;
+@btn-error-bg: @error-color;
+@btn-error-border: @error-color;
+
+//group boder color
+@btn-group-default-border-color: shade(@text-color, 5%);
+@btn-group-primary-border-color: shade(@primary-color, 5%);
+@btn-group-info-border-color: shade(@info-color, 5%);
+@btn-group-success-border-color: shade(@success-color, 5%);
+@btn-group-warning-border-color: shade(@warning-color, 5%);
+@btn-group-error-border-color: shade(@error-color, 5%);
+
 .@{btn-prefix-cls} {
+  outline: 0;
+  border: 1px solid #d3d3d3;
+  line-height: @line-height;
+  cursor: pointer;
+  /*size 相关*/
+  //default
+  .btn-size(@btn-padding-base, @btn-font-size-base, @btn-border-raduis);
+  //large
+  &-large {
+    .btn-size(@btn-padding-large, @btn-font-size-large, @btn-border-raduis);
+  }
+  &-small {
+    .btn-size(@btn-padding-small, @btn-font-size-base, @btn-border-raduis-small);
+  }
+  //block
+  &-block {
+    width: 100%;
+  }
+  //type
+  //notice then the styles of default,dashed and text are a little different
   &-default {
-    color: red;
+    .btn-default();
+  }
+  &-primary {
+    .btn-color-variant(@btn-primary-color, @btn-primary-bg, @btn-primary-border);
+  }
+  &-dashed {
+    .btn-default();
+    border-style: dashed;
+  }
+  &-text {
+    .btn-type-color(@btn-text-color, @btn-text-bg, @btn-text-border);
+    &:hover {
+      .btn-type-color(tint(@primary-color, 20%), tint(@btn-text-bg, 20%), tint(@btn-text-border, 20%));
+    }
+    &:active {
+      .btn-type-color(tint(@primary-color, 5%), tint(@btn-text-bg, 5%), tint(@btn-text-border, 5%));
+    }
+  }
+  &-info {
+    .btn-color-variant(@btn-info-color, @btn-info-bg, @btn-info-border);
+  }
+  &-success {
+    .btn-color-variant(@btn-success-color, @btn-success-bg, @btn-success-border);
+  }
+  &-warning {
+    .btn-color-variant(@btn-warning-color, @btn-warning-bg, @btn-warning-border);
+  }
+  &-error {
+    .btn-color-variant(@btn-error-color, @btn-error-bg, @btn-error-border);
+  }
+
+  /*** ghost style **/
+  &-ghost&-default {
+    .btn-color-variant(@btn-default-bg, transparent, @btn-default-border);
+  }
+  &-ghost&-primary {
+    .btn-color-variant(@btn-primary-bg, transparent, @btn-primary-border);
+  }
+  &-ghost&-dashed {
+    .btn-color-variant(@btn-default-bg, transparent, @btn-default-border);
+    border-style: dashed;
+  }
+  &-ghost&-text {
+    .btn-color-variant(@btn-default-bg, transparent, @btn-text-border);
+  }
+  &-ghost&-info {
+    .btn-color-variant(@btn-info-bg, transparent, @btn-info-border);
+  }
+  &-ghost&-success {
+    .btn-color-variant(@btn-success-bg, transparent, @btn-success-border);
+  }
+  &-ghost&-warning {
+    .btn-color-variant(@btn-warning-bg, transparent, @btn-warning-border);
+  }
+  &-ghost&-error {
+    .btn-color-variant(@btn-error-bg, transparent, @btn-error-border);
+  }
+  /******** disabled style ************/
+  &[disabled] {
+    background: transparent;
+    color: fade(#000, 25%);
+    border-color: @btn-disable-border;
+    cursor: not-allowed;
+    &:hover {
+      background: transparent;
+      color: fade(#000, 25%);
+      border-color: @btn-disable-border;
+    }
+  }
+}
+/****** button group *****/
+.@{btn-prefix-cls}-group {
+  display: inline-block;
+  > .@{btn-prefix-cls} {
+    position: relative; //使z-index生效
+    float: left; //使两个ds-button之间无空白 或者用font-size:0px ?
+    &:hover {
+      z-index: 1;
+    }
+  }
+  > .@{btn-prefix-cls}:first-child {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  > .@{btn-prefix-cls}:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  > .@{btn-prefix-cls}:not(:first-child):not(:last-child) {
+    border-radius: 0px;
+  }
+  > .@{btn-prefix-cls}:not(:first-child) {
+    margin-left: -1px;
+    /*  shade(@color,@weight) = mix(#000,@color,@weight) */
+    &.@{btn-prefix-cls}-primary {
+      border-left-color: shade(@primary-color, 5%);
+    }
+    &.@{btn-prefix-cls}-info {
+      border-left-color: shade(@info-color, 5%);
+    }
+    &.@{btn-prefix-cls}-success {
+      border-left-color: shade(@success-color, 5%);
+    }
+    &.@{btn-prefix-cls}-warning {
+      border-left-color: shade(@warning-color, 5%);
+    }
+    &.@{btn-prefix-cls}-error {
+      border-left-color: shade(@error-color, 5%);
+    }
   }
 }

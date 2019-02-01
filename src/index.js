@@ -3,8 +3,8 @@ import Input from './components/input';
 import Collapse from './components/collapse';
 import Card from './components/card';
 import Icon from './components/icon';
-
-const components = [Button, Input, Collapse, Card, Icon];
+const ButtonGroup = Button.Group;
+const components = [Button, ButtonGroup, Input, Collapse, Card, Icon];
 
 const install = function(Vue) {
   if (install.installed) return;
