@@ -8,6 +8,9 @@
         <li>
           <router-link to="/collapse">collapse</router-link>
         </li>
+        <li>
+          <router-link to="/icon">icon</router-link>
+        </li>
       </ul>
     </nav>
     <router-view></router-view>

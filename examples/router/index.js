@@ -9,6 +9,10 @@ const router = new VueRouter({
     {
       path: '/collapse',
       component: () => import('../components/collapse.vue')
+    },
+    {
+      path: '/icon',
+      component: () => import('../components/icon.vue')
     }
   ]
 });
