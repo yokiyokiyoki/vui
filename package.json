@@ -99,7 +99,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn precommit-msg && lint-staged",
-      "commit-msg": "commitlint -c -e $GIT_PARAMS"
+      "commit-msg": "commitlint -c -E HUSKY_GIT_PARAMS"
     }
   },
   "config": {
