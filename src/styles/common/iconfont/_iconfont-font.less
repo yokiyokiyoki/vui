@@ -1,0 +1,27 @@
+@font-face {
+  font-family: @iconfont-font-family;
+  src: url('@{iconfont-font-path}/ds-iconfont.ttf?v=@{iconfont-version}') format('truetype'),
+    url('@{iconfont-font-path}/ds-iconfont.woff?v=@{iconfont-version}') format('woff'),
+    url('@{iconfont-font-path}/ds-iconfont.svg?v=@{iconfont-version}#iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.iconfont-mixin() {
+  display: inline-block;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+}
+
+.@{iconfont-css-prefix} {
+  font-family: @iconfont-font-family;
+  .iconfont-mixin();
+}
