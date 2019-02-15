@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import panel from './panel';
 export default {
   name: 'ds-collapse',
   props: {
@@ -22,9 +21,7 @@ export default {
       currentValue: this.value
     };
   },
-  components: {
-    panel
-  },
+
   watch: {
     value(val) {
       this.currentValue = val;
@@ -60,7 +57,6 @@ export default {
       return activeKey;
     },
     toggle({ name, isActive }) {
-      console.log(name, isActive);
       let newActiveKey = [];
       //手风琴模式
       if (this.accordion) {

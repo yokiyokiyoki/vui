@@ -102,9 +102,4 @@ function removeClass(el, cls) {
   }
 }
 
-export default {
-  getStyle,
-  hasClass,
-  addClass,
-  removeClass
-};
+export { getStyle, hasClass, addClass, removeClass };

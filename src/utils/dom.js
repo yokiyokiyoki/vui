@@ -43,7 +43,4 @@ const off = (function() {
   }
 })();
 
-export default {
-  on,
-  off
-};
+export { on, off };

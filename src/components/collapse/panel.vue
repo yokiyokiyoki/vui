@@ -1,18 +1,22 @@
 <template>
   <div class="ds-panel-wrapper">
     <div class="ds-collapse-header" @click="toggle">{{header}}</div>
-    <transition name="collapse">
+    <collapse-transition>
       <div class="ds-collapse-content" v-show="isActive">
         <div class="ds-collapse-content-box">
           <slot/>
         </div>
       </div>
-    </transition>
+    </collapse-transition>
   </div>
 </template>
 <script>
+import CollapseTransition from './collapse-transition';
 export default {
   name: 'ds-panel',
+  components: {
+    CollapseTransition
+  },
   data() {
     return {
       isActive: false
