@@ -1,28 +1,43 @@
 <template>
   <div class="ds-panel-wrapper">
-    <div class="ds-collapse-header">{{header}}</div>
-    <div class="ds-collapse-content">
-      <div class="ds-collapse-content-box">
-        <slot/>
+    <div class="ds-collapse-header" @click="toggle">{{header}}</div>
+    <transition name="collapse">
+      <div class="ds-collapse-content" v-show="isActive">
+        <div class="ds-collapse-content-box">
+          <slot/>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 <script>
 export default {
   name: 'ds-panel',
+  data() {
+    return {
+      isActive: false
+    };
+  },
   props: {
     disabled: {
       type: Boolean,
-      required: true
+      default: false
     },
     header: {
       type: String,
       required: true
     },
-    key: {
+    name: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    toggle() {
+      this.$parent.toggle({
+        name: this.name,
+        isActive: this.isActive
+      });
     }
   }
 };
