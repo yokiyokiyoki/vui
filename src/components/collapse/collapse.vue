@@ -1,11 +1,6 @@
 <template>
   <div class="ds-collapse-wrapper">
-    <panel header="介绍" name="1">
-      <p>11</p>
-    </panel>
-    <panel header="介绍3" name="2">
-      <p>112</p>
-    </panel>
+    <slot/>
   </div>
 </template>
 <script>
@@ -18,10 +13,6 @@ export default {
       required: true
     },
     accordion: {
-      type: Boolean,
-      default: false
-    },
-    destroyInactivePanel: {
       type: Boolean,
       default: false
     }
