@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       value: ['1', '2'],
-      accordion: true
+      accordion: false
     };
   }
 };
