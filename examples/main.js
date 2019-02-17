@@ -9,6 +9,7 @@ import router from './router/index.js';
 // import '../lib/styles/dsui.css';
 // 开发模式直接不引用打包
 import dsui from '../src/index';
+import '../src/styles/index.less';
 Vue.use(VueRouter);
 
 Vue.use(dsui);

@@ -1,7 +1,39 @@
 @import '../custom';
-@btn-prefix-cls: ~'@{css-prefix}collapse';
-.@{btn-prefix-cls} {
-  &-default {
-    color: red;
+@collapse-prefix-cls: ~'@{css-prefix}collapse';
+.@{collapse-prefix-cls} {
+  &-wrapper {
+    font-size: 14px;
+    font-variant: tabular-nums;
+    font-feature-settings: 'tnum';
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+  }
+  &-header {
+    line-height: 22px;
+    padding: 12px 0 12px 40px;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+  }
+  &-content {
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #fff;
+    border-top: 1px solid #d9d9d9;
+    &.collapse-transition {
+      transition: all 0.5s;
+    }
+    &-box {
+      padding: 16px;
+    }
   }
 }
