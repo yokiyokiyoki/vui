@@ -2,8 +2,7 @@
   <i :class="classes" :style="styles" @click="handleClick"></i>
 </template>
 <script>
-const prefixCls = 'ds-icon'
-import '../../styles/common/iconfont/iconfont.less'
+const prefixCls = 'ds-icon';
 
 export default {
   name: 'ds-icon',
@@ -36,9 +35,9 @@ export default {
         {
           [`${prefixCls}-${this.type}`]: this.type !== '',
           [`${this.custom}`]: this.custom !== '',
-          [`${prefixCls}-spin`]: this.spin,
+          [`${prefixCls}-spin`]: this.spin
         }
-      ]
+      ];
     },
     styles() {
       return [
@@ -48,12 +47,12 @@ export default {
         this.rotate && {
           transform: `rotate(${this.rotate}deg)`
         }
-      ]
+      ];
     }
   },
   methods: {
     handleClick(e) {
-      this.$emit('click', e)
+      this.$emit('click', e);
     }
   }
 };
