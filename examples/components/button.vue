@@ -1,5 +1,6 @@
 <template>
   <div class="button">
+    <p class="label">按钮类型</p>
     <div class="list">
       <ds-button >default</ds-button>
       <ds-button type="primary">primary</ds-button>
@@ -10,11 +11,13 @@
       <ds-button type="warning">warning</ds-button>
       <ds-button type="error">error</ds-button>
     </div>
+    <p class="label">按钮尺寸</p>
     <div class="list">
       <ds-button size="large">large</ds-button>
       <ds-button >default</ds-button>
       <ds-button size="small">small</ds-button>
     </div>
+    <p class="label">幽灵按钮</p>
     <div class="list ghost">
       <ds-button ghost>default</ds-button>
       <ds-button type="primary" ghost>primary</ds-button>
@@ -25,6 +28,7 @@
       <ds-button type="warning" ghost>warning</ds-button>
       <ds-button type="error" ghost>error</ds-button>
     </div>
+    <p class="label">不可用状态</p>
     <div class="list">
       <ds-button disabled>default</ds-button>
       <ds-button type="primary" disabled>primary</ds-button>
@@ -45,6 +49,7 @@
       <ds-button type="warning" ghost disabled>warning</ds-button>
       <ds-button type="error" ghost disabled>error</ds-button>
     </div>
+    <p class="label">长按钮</p>
     <div class="list block">
       <ds-button block>default</ds-button>
       <ds-button type="primary" block>primary</ds-button>
@@ -55,6 +60,7 @@
       <ds-button type="warning" block>warning</ds-button>
       <ds-button type="error" block>error</ds-button>
     </div>
+    <p class="label">按钮组</p>
     <div class="list group">
       <ds-button-group>
         <ds-button >default</ds-button>
@@ -93,9 +99,16 @@
         <ds-button type="error">error</ds-button>
       </ds-button-group>
     </div>
-     <div class="list">
-       <button>222</button>
-       <button>22244</button>
+    <p class="label">按钮跳转</p>
+    <div class="list">
+      <ds-button href="/#/collapse">普通跳转</ds-button>
+      <ds-button href="http://www.baidu.com" target="_blank">打开新页面的跳转</ds-button> 
+      <ds-button :href="{path:'/collapse'}" >router </ds-button> 
+    </div>
+    <p class="label">按钮 原生type类型</p>
+    <div class="list">
+      <ds-button html-type="submit">submit type</ds-button>
+      <ds-button html-type="reset">reset type</ds-button> 
     </div>
   </div>
   
@@ -122,6 +135,10 @@ export default {};
       margin-bottom: 10px;
     }
   }
+}
+.label{
+  font-size: 14px;
+  margin-left: 20px;
 }
 </style>
 

@@ -103,6 +103,7 @@
   border: 1px solid #d3d3d3;
   line-height: @line-height;
   cursor: pointer;
+  text-decoration: none;
   /*size 相关*/
   //default
   .btn-size(@btn-padding-base, @btn-font-size-base, @btn-border-raduis);
@@ -213,7 +214,7 @@
   }
   > .@{btn-prefix-cls}:not(:first-child) {
     margin-left: -1px;
-    /*  shade(@color,@weight) = mix(#000,@color,@weight) */
+    /*  shade(@color,@weight) = mix(#000,@color,@weight) 将颜色与黑色混合*/
     &.@{btn-prefix-cls}-primary {
       border-left-color: shade(@primary-color, 5%);
     }
