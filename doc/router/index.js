@@ -4,7 +4,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: 'button'
+      redirect: '/button'
     },
     {
       path: '/button',

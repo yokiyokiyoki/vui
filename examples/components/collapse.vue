@@ -1,6 +1,6 @@
 <template>
   <div class="collapse">
-    <ds-collapse v-model="value" :accordion="accordion">
+    <ds-collapse v-model="value" :accordion="accordion" @on-change="handleChange">
       <ds-panel header="介绍" name="1">
         <p>11</p>
       </ds-panel>
@@ -20,6 +20,11 @@ export default {
       value: ['1', '2'],
       accordion: false
     };
+  },
+  methods: {
+    handleChange(value) {
+      console.log(value);
+    }
   }
 };
 </script>

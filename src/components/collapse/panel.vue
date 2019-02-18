@@ -23,10 +23,6 @@ export default {
     };
   },
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
     header: {
       type: String,
       required: true
