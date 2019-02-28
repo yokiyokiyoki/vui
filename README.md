@@ -26,11 +26,7 @@
 ### 安装
 
 ```bash
-$ npm i zara-cli -g               # install cli
-$ omi init my-app     # init project, you can also exec 'omi init' in an empty folder
-$ cd my-app           # please ignore this command if you executed 'omi init' in an empty folder
-$ npm start                      # develop
-$ npm run build                  # release
+$ npm i 
 ```
 
 目录说明:
